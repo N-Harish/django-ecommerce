@@ -1,0 +1,15 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div id="product-card" class="card bg-dark mb-3" style="max-width: 18rem;">
+            <img src="{% static 'images/placeholder.png' %}" class="thumbnail">
+            <div class="card-body box-shadow shadow-lg">
+                <h5 class="card-title text-white">Product Name</h5>
+                <p class="card-text">Product Description</p>
+                <a class="btn btn-warning" href="#buy-product">View</a>
+                <a class="btn btn-warning" href="#add-to-cart">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
