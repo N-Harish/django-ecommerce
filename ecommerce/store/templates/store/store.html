@@ -9,7 +9,7 @@
                 <h5 class="card-title text-white">{{product.name}}</h5>
                 <p class="card-text">&#8377;{{product.price}}</p>
                 <a class="btn btn-warning" href="#buy-product">View</a>
-                <a class="btn btn-warning" href="#add-to-cart">Add to Cart</a>
+                <a data-product="{{product.id}}" data-action="add" class="btn btn-warning add-btn update-cart text-dark">Add to Cart</a>
             </div>
         </div>
         {% endfor %}
