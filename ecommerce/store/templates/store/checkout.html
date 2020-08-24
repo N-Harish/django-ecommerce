@@ -52,15 +52,17 @@
             <a class="btn btn-warning" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
             <hr>
             <h3 class="text-white">Order Summary</h3>
+            {% for item in items %}
             <div class="cart-row">
-                <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
-                <div style="flex:2">Product</div>
-                <div style="flex:2">&#8377;1000</div>
-                <div style="flex:2">x2</div>
+                <div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
+                <div style="flex:2">{{item.product.name}}</div>
+                <div style="flex:2">&#8377;{{item.product.price}}</div>
+                <div style="flex:2">x{{item.quantity}}</div>
             </div>
+            {% endfor %}
             <br>
-            <h5 class="text-white">Items: 2</h5>
-            <h5 class="text-white">Total: &#8377;2000</h5>
+            <h5 class="text-white">Items: {{order.get_cart_items}}</h5>
+            <h5 class="text-white">Total: &#8377;{{order.get_cart_total}}</h5>
         </div>
     </div>
 </div>
