@@ -1,5 +1,67 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-<h3>checkout</h3>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box-element bg-dark box-shadow shadow-lg" id="form-wrapper">
+            <form>
+                <div id="user-info">
+                    <div class="form-field">
+                        <input required class="form-control" type="text" name="name" placeholder="Your Name">
+                    </div>
+
+                    <div class="form-field">
+                        <input required class="form-control" type="email" name="email" placeholder="Your email">
+                    </div>
+                </div>
+                
+                <hr>
+                <h3 class="text-white">Shipping Info</h3>
+                
+                <div id="shipping-info">
+                    <div class="form-field">
+                        <input required class="form-control" type="text" name="Address" placeholder="Address">
+                    </div>
+
+                    <div class="form-field">
+                        <input required class="form-control" type="text" name="City" placeholder="City">
+                    </div>
+
+                    <div class="form-field">
+                        <input required class="form-control" type="text" name="State" placeholder="State">
+                    </div>
+
+                    <div class="form-field">
+                        <input required class="form-control" type="text" name="Pin-Code" placeholder="Pin-Code">
+                    </div>
+
+                </div>
+
+                <hr>
+                <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+            </form>
+        </div>
+            <br>
+            <div class="box-element hidden box-shadow shadow-lg" id="payment-info">
+                <small>Paypal Options</small>
+            </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="box-element bg-dark box-shadow shadow-lg">
+            <a class="btn btn-warning" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+            <hr>
+            <h3 class="text-white">Order Summary</h3>
+            <div class="cart-row">
+                <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
+                <div style="flex:2">Product</div>
+                <div style="flex:2">&#8377;1000</div>
+                <div style="flex:2">x2</div>
+            </div>
+            <br>
+            <h5 class="text-white">Items: 2</h5>
+            <h5 class="text-white">Total: &#8377;2000</h5>
+        </div>
+    </div>
+</div>
 {% endblock content %}
